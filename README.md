@@ -18,26 +18,26 @@ docker build -t vmaconverter .
 
 1. From the host run the docker image:
 
-> docker run -it -v <BACKUPS DIRECTORY>:/backup vmaconverter:latest /bin/bash
+`docker run -it -v <BACKUPS DIRECTORY>:/backup vmaconverter:latest /bin/bash`
 
 2. Now in the container change to backup directory to see the mounted images:
 
-> $ cd /backup
+`$ cd /backup`
 
 3. Uncrompress the archive with:
 
-> $ lzop -d ./file.vma.lzo -p
+`$ lzop -d ./file.vma.lzo -p`
 
 4. Then extract the archive with: 
 
-> $ vma extract ./file.vma -v ./vmaextract
+`$ vma extract ./file.vma -v ./vmaextract`
 
-There should now be two file in `vmaextract`:
+There should now be two files in `vmaextract`:
 - config_file
 - raw_backup_file
 
 5. As the last step convert the raw image to a VirtualBox image:
-> $ qemu-img convert vmaextract/disk-drive-scsi0.raw -O vdi disk.vdi
+`$ qemu-img convert vmaextract/disk-drive-scsi0.raw -O vdi disk.vdi`
   
 Extended command options for vma utility
 
