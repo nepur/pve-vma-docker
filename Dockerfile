@@ -7,12 +7,12 @@ ADD http://download.proxmox.com/debian/key.asc /tmp/key.asc
 RUN apt-get update \
  && apt-get upgrade -y \
  && apt-get install -y gnupg2 \
- && apt-key add /tmp/key.asc \
+ && wget -O- "http://download.proxmox.com/debian/key.asc" | apt-key add - \
  && apt-get install -y pve-qemu-kvm \
  && apt-get clean \
  && mkdir -p /backup
 
 WORKDIR /backup
-
+# && apt-key add /tmp/key.asc \
 VOLUME /backup
 
