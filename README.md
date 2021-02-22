@@ -37,6 +37,7 @@ There should now be two files in `vmaextract`:
 - raw_backup_file
 
 5. As the last step convert the raw image to a VirtualBox image:
+
 `$ qemu-img convert vmaextract/disk-drive-scsi0.raw -O vdi disk.vdi`
   
 Extended command options for vma utility
