@@ -8,22 +8,26 @@ The image exposes `/backup` as a good place to mount the folder with the backup.
 
 Build the Docker image
 
-`git clone https://github.com/nepur/pve-vma-docker.git
+```
+git clone https://github.com/nepur/pve-vma-docker.git
 cd pve-vma-docker
-docker build -t "$USER/vma" .`
+docker build -t "$USER/vma" .
+```
 
 ## Usage
 
 > docker run -t -i -v <BACKUPS DIRECTORY>:/backups nepur/pve-vma-docker:latest /bin/bash
 
-`root@myserver:/# cd /backups
+```
+root@myserver:/# cd /backups
 root@myserver:/backups# vma
 usage: vma command [command options]
 
 vma list <filename>
 vma create <filename> [-c config] <archive> pathname ...
 vma extract <filename> [-v] [-r <fifo>] <targetdir>
-vma verify <filename> [-v]`
+vma verify <filename> [-v]
+```
 
 Uncrompress the archive with:
 
