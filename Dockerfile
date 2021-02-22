@@ -10,10 +10,9 @@ RUN apt-get update \
 RUN echo deb "http://download.proxmox.com/debian buster pve-no-subscription" >> /etc/apt/sources.list
 
 RUN apt-get update \
+ && apt-get install -y pve-qemu-kvm \
  && apt-get clean \
  && mkdir -p /backup
-
-#&& apt-get install -y pve-qemu-kvm \
 
 WORKDIR /backup
 
