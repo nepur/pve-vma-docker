@@ -4,10 +4,10 @@ RUN echo deb "http://download.proxmox.com/debian buster pve" >> /etc/apt/sources
 
 ADD http://download.proxmox.com/debian/key.asc /tmp/key.asc
 
-RUN apt-get update \
+RUN apt-key add /tmp/key.asc \
+ && apt-get update \
  && apt-get upgrade -y \
  && apt-get install -y gnupg2 \
- && apt-key add /tmp/key.asc \
  && apt-get install -y pve-qemu-kvm \
  && apt-get clean \
  && mkdir -p /backup
