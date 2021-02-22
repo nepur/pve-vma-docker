@@ -1,6 +1,6 @@
 FROM debian:buster
 
-RUN echo deb "http://download.proxmox.com/debian buster pve" >> /etc/apt/sources.list
+RUN echo deb "http://download.proxmox.com/debian buster pve-no-subscription" >> /etc/apt/sources.list
 
 # ADD http://download.proxmox.com/debian/proxmox-ve-release-6.x.gpg /tmp/key.asc
 # && apt-key add /tmp/key.asc \
