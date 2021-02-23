@@ -38,8 +38,10 @@ There should now be two files in `vmaextract`:
 
 5. As the last step convert the raw image to a VirtualBox image:
 
-`$ qemu-img convert vmaextract/disk-drive-scsi0.raw -O vdi disk.vdi`
+`$ qemu-img convert -p vmaextract/disk-drive-scsi0.raw vmaextract/disk-drive-efidisk0.raw -O vdi disk.vdi`
   
+6. This should produce a vdi compatible with VirtualBox.  Also there should be a qemu.conf from step 4.
+
 Extended command options for vma utility
 
 ```
